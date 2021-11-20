@@ -1,0 +1,24 @@
+﻿@model UCP1_PAW_015_A.Models.MataPelajaran
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>MataPelajaran</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NamaMatapelajaran)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NamaMatapelajaran)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdMatapelajaran">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

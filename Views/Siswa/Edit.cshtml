@@ -1,0 +1,44 @@
+﻿@model UCP1_PAW_015_A.Models.Siswa
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Siswa</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdSiswa" />
+            <div class="form-group">
+                <label asp-for="NamaSiswa" class="control-label"></label>
+                <input asp-for="NamaSiswa" class="form-control" />
+                <span asp-validation-for="NamaSiswa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdJeniskelamin" class="control-label"></label>
+                <select asp-for="IdJeniskelamin" class="form-control" asp-items="ViewBag.IdJeniskelamin"></select>
+                <span asp-validation-for="IdJeniskelamin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdKelas" class="control-label"></label>
+                <select asp-for="IdKelas" class="form-control" asp-items="ViewBag.IdKelas"></select>
+                <span asp-validation-for="IdKelas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

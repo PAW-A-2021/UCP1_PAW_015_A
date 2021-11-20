@@ -1,0 +1,38 @@
+﻿@model UCP1_PAW_015_A.Models.JenisKelamin
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>JenisKelamin</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdJeniskelamin" class="control-label"></label>
+                <input asp-for="IdJeniskelamin" class="form-control" />
+                <span asp-validation-for="IdJeniskelamin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NamaJeniskelamin" class="control-label"></label>
+                <input asp-for="NamaJeniskelamin" class="form-control" />
+                <span asp-validation-for="NamaJeniskelamin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
